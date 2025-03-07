@@ -122,6 +122,7 @@ body{
 #page1{
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 
 #page1 #nav{
@@ -147,8 +148,8 @@ body{
     width: 72%;
     margin-left: 28%;
     height: fit-content;
-    overflow: hidden;
-    display: flex;
+    overflow-y: hidden;
+    display: flex;  
     align-items: center;
     position: relative;
     z-index: 9999;
@@ -158,7 +159,15 @@ body{
     margin-top: 17vh;
 }
 
-.hero h1, .hero h2, .hero h3{
+.hero h1{
+    font-size: 7.4vw;
+    font-weight: 600;
+    line-height: 7.4vw;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.hero h2, .hero h3{
     font-size: 7.4vw;
     font-weight: 600;
     line-height: 7.4vw;
@@ -255,6 +264,17 @@ body{
 #page4-content h1{
     font-size: 7.1vw;
     text-transform: uppercase;
+    position: relative;
+}
+
+#page4-content h1::before{
+    content: "03";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 500;
+    left: -13%;
+    top: 7%;
+    font-family: "silk serif";
 }
 
 #page4-content .underline{
@@ -313,10 +333,116 @@ body{
     width: 45%;
 }
 
+#page4-last{
+    margin-top: -3vw;
+}
+
 
                                                     /* pagge 5 */
 
 #page5{
+    height: 100vh;
+    width: 100%;
+    padding: 3.5vw 0;
+    position: relative;
+}
+
+.marquee{
+    overflow-x: hidden;
+    white-space: nowrap;
+    overflow-y: hidden;
+    margin-bottom: -2.5vw;
+}
+
+.marquee h1{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 100;
+    display: inline-block;
+    margin-right: 16px;
+    animation: move 20s infinite;
+    animation-timing-function: linear;
+}
+
+.marquee:nth-child(2) h1{
+    transform: translateX(calc(-100% - 20px));
+    animation-direction: reverse;
+}
+.marquee:nth-child(4) h1{
+    transform: translateX(calc(-100% - 20px));
+    animation-direction: reverse;
+}
+
+.marquee span{
+    color: transparent;
+    font-family: "silk serif";
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+
+
+                                                        /* footer */
+
+#footer{
     min-height: 100vh;
     width: 100%;
+    padding: 5vw 0 3vw 0;
+    padding-left: 29vw;
+}
+
+#footer h1{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#footer h1::before{
+    content: "04";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 500;
+    left: -15%;
+    top: 7%;
+    font-family: "silk serif";
+}
+
+.underline{
+    height: 2px;
+    background-color: white;
+    width: 92%;
+    margin: 5vw 0;
+}
+
+#footer-div{
+    padding-right: 10vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.box{
+    width: 30%;
+}
+
+.box h6{
+    font-size: 0.9vw;
+    margin: 2vw 0;
+}
+
+.box h4{
+    font-size: 1.6vw;
+    font-weight: 500;
+}
+
+#copyright{
+    margin-top: -2vw;
 }
