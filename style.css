@@ -17,15 +17,11 @@ body{
 
 
                                             /* cursor */
-#crsr{
-    height: 2.5vw;
-    width: 2.5vw;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 999;
-    border: 1px solid rgba(255, 255, 255, 0.668);
+.mousefollower{
+    border: 2px solid #fff;
+    background-color: rgb(255, 255, 255);
+    scale: 2;
     mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
 }
 
                                              /* loader */
@@ -132,6 +128,14 @@ body{
     padding: 3vw 5vw;
 }
 
+#nav-part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5vw;
+    position: sticky;
+}
+
 #nav-part2{
     display: flex;
     align-items: center;
@@ -186,6 +190,20 @@ body{
     border-bottom: 0.6vw solid #ffffff00;
 }
 
+#flag{
+    height: 25vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+#hero3{
+    position: relative;
+    z-index: 999;
+}
+
 
                                                     /* page 2 */
 
@@ -197,43 +215,38 @@ body{
 }
 
 #video-container{
-    height: 70vh;
-    width: 72%;
+    height: 72vh;
+    width: 72vw;
     position: relative;
     left: 28%;
-    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-#video-container img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+#video-cursor{
+    height: 9vw;
+    width: 9vw;
+    background-color: #FFA63D;
+    border-radius: 50%;
     position: absolute;
-    top: 0;
+    left: 70%;
+    top: -15%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-cursor i{
+    font-size: 2.7vw;
 }
 
 #video-container video{
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
-
-#image-cursor{
-    height: 10vw;
-    width: 10vw;
-    background-color: #FFA63D;
-    border-radius: 50%;
-    position: absolute;
-    left: 70%;
-    top: -10%;
-    z-index: 99;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#image-cursor i{
-    font-size: 2.7vw;
+    opacity: 0;
 }
 
 
@@ -242,9 +255,138 @@ body{
 #page3{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(74, 74, 74);
+    position: relative;
+    padding: 7vh 2vw;
+}
+
+#page3 h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+}
+
+#page3 h1::before{
+    content: "02";
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 500;
+    position: absolute;
+    top: 8%;
+    left: -13%;
+}
+
+#page3 .underline{
+    margin-left: 28vw;
+    background-color: #fff;
+    height: 2px;
+    width: 67%;
+}
+
+#image-div-container{
+    position: relative;
+    padding: 1vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-div{
+    height: 42vw;
+    width: 31vw;
+    margin: 2vw;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-div:nth-child(1){
+    height: 29vw;
+    width: 21vw;
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#page3-circle1{
+    height: 23vw;
+    width: 23vw;
+    margin-top: 28vw;
+    margin-left: 8vw;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
+
+#page3-circle1 svg{
+    height: 30%;
+}
+
+#page3-circle2{
+    height: 23vw;
+    width: 23vw;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all ease 0.3s;
+}
+
+#page3-circle2 svg{
+    height: 30%;
+    rotate: -45deg;
+}
+
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    border-radius: 50%;
+    scale: 0;
+    transition: all ease 0.3s;
+}
+
+.circle-in p{
+    font-size: 1vw;
+    font-family: "Plain";
+    font-weight: 500;
+    width: 80%;
+    color: #000;
+    scale: 0;
+    transition: all ease 0.3s;
+    transition-delay: 0.3s;
+}
+
+#page3-circle1:hover .circle-in{
+    scale: 1;
+}
+#page3-circle1:hover .circle-in p{
+    scale: 1;
+}
+
+#page3-circle2:hover .circle-in{
+    scale: 1;
+}
+#page3-circle2:hover .circle-in p{
+    scale: 1;
+}
+
 
                                                         /* page 4 */
 
@@ -341,7 +483,7 @@ body{
                                                     /* pagge 5 */
 
 #page5{
-    height: 100vh;
+    height: fit-content;
     width: 100%;
     padding: 3.5vw 0;
     position: relative;
@@ -399,20 +541,41 @@ body{
     padding-left: 29vw;
 }
 
-#footer h1{
+#footer h1 {
     font-size: 7.2vw;
     text-transform: uppercase;
     position: relative;
 }
 
-#footer h1::before{
+#footer-text {
+    position: relative;
+}
+
+#footer-text h2 {
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    position: absolute;
+    top: -10%;
+    font-weight: 500;
+    left: 0;
+    font-family: "silk serif";
+}
+
+#footer-text h2 span {
+    font-family: "silk serif";
+    opacity: 0;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+}
+
+#footer-text::before {
     content: "04";
     position: absolute;
     font-size: 3vw;
-    font-weight: 500;
-    left: -15%;
-    top: 7%;
+    font-weight: 100;
     font-family: "silk serif";
+    left: -13%;
+    top: 14%;
 }
 
 .underline{
@@ -445,4 +608,10 @@ body{
 
 #copyright{
     margin-top: -2vw;
+}
+
+
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
 }
