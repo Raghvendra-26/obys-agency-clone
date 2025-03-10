@@ -111,18 +111,20 @@ function cursorAnimation(){
             })
             gsap.to("#video-cursor",{
                 left : dets.x - 500,
-                top : dets.y - 195
+                top : dets.y - 185
             })
         })
     })
 
+    var t = document.querySelector("#video-cursor").style.top
+    var l = document.querySelector("#video-cursor").style.left
     videoContainer.addEventListener("mouseleave",function(){
         gsap.to(".mousefollower",{
             opacity:1
         })
         gsap.to("#video-cursor",{
-            left : "70%",
-            top : "-15%"
+            left : l,
+            top : t
         })
     })
 
@@ -225,7 +227,20 @@ function pageAnimation(){
             trigger: "#page3 h1",
             scroller: "#main",
             // markers: true,
-            start: "top 85%",
+            start: "top 100%",
+            scrub: 2
+        }
+    })
+
+    gsap.from("#page3 .underline",{
+        width:0,
+        opacity:0,
+        duration:0.5,
+        scrollTrigger:{
+            trigger: "#page3 .underline",
+            scroller: "#main",
+            // markers: true,
+            start: "top 100%",
             scrub: 2
         }
     })
@@ -238,11 +253,24 @@ function pageAnimation(){
             trigger: "#page4-content h1",
             scroller: "#main",
             // markers: true,
-            start: "top 85%",
+            start: "top 100%",
             scrub: 2
         }
     })
-    
+
+    gsap.from("#page4-content .underline",{
+        width:0,
+        opacity:0,
+        duration:0.5,
+        scrollTrigger:{
+            trigger: "#page4-content .underline",
+            scroller: "#main",
+            // markers: true,
+            start: "top 100%",
+            scrub: 2
+        }
+    })
+
     gsap.from("#footer-text h1",{
         y:100,
         opacity:0,
@@ -251,7 +279,20 @@ function pageAnimation(){
             trigger: "#footer-text h1",
             scroller: "#main",
             // markers: true,
-            start: "top 85%",
+            start: "top 100%",
+            scrub: 2
+        }
+    })
+
+    gsap.from("#footer .underline",{
+        width:0,
+        opacity:0,
+        duration:0.5,
+        scrollTrigger:{
+            trigger: "#footer .underline",
+            scroller: "#main",
+            // markers: true,
+            start: "top 110%",
             scrub: 2
         }
     })
