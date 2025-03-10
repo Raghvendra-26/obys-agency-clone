@@ -99,7 +99,10 @@ function cursorAnimation(){
         duration: 1,
       });
 
-    Shery.makeMagnet("#nav-part2 h4");
+      Shery.makeMagnet("#nav-part2 h4", {
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 1,
+      });
 
     var videoContainer = document.querySelector("#video-container");
     var video = document.querySelector("#video-container video");
